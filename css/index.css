@@ -1,0 +1,569 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+body, html {
+    height: 100%;
+    background-color: #69D2E7; /*Viking*/
+}
+
+p, h1, h2, h3, li {
+    color: #2b2b2b;
+}
+
+button {
+    font-weight: 600;
+}
+
+#nav {
+    background-color: #FA6900; /*Dark orange*/
+    padding: 10px 0;
+    text-align: center;
+}
+
+#nav > div {
+    display:inline-block;
+}
+
+#nav > div a:first-of-type {
+    float: left;
+    margin-right: 25px;
+}
+
+#nav > div a:nth-of-type(2) {
+    display: inline-block;
+}
+
+#nav > div a:last-of-type {
+    float: right;
+    margin-left: 25px;
+}
+
+#recipe-panel {
+    width: 100%;
+    padding: 50px 0;
+    background-color: #E0E4CC;
+}
+
+#recipe-panel > div {
+    width: 777px;
+    height: 450px;
+    background-image: url('../img/book2.jpg');
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#recipe-panel > div > div {
+    position: relative;
+    left: 110px;
+    top: 30px;
+}
+
+#recipe-panel > div > div > div:first-of-type {
+    width: 185px;
+    position: absolute;
+}
+
+#recipe-panel > div > div > div:last-of-type {
+    position: relative;
+    left: 315px;
+    width: 280px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+#recipe-panel button {
+    margin: 0 auto 17px;
+    width: 60px;
+    display: block;
+    background-color: #69D2E7;
+}
+
+#single-listing h1 {
+    font-family: delicious-heavy;
+    margin-top: 0;
+}
+
+#all-listings h1 { 
+    font-family: delicious-heavy; 
+    margin-top: 110px;
+}
+
+#single-listing ul {
+    padding-left: 20px;
+}
+
+#all-listings ul {
+    padding-left: 20px;
+}
+
+#all-listings a {
+    font-family: delicious;
+    font-size: 20px;
+    text-decoration: none;
+    color: #FA6900;
+}
+
+#single-listing li, #all-listings li {
+    list-style-type: none;
+}
+
+#single-listing div:first-of-type li {
+    font-family: delicious;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.food-panel {
+    background-color: #E0E4CC; /* willow brook */
+}
+
+.food-inventory {
+    text-align: center;
+    width: 550px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+.food-inv-col-1 {
+    float: left;
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 0;
+    width: 170px;
+    padding-left: 5px;
+    height: 45px;
+}
+
+.food-inv-col-2 {
+    float: left;
+    width: 162px;
+    height: 45px;
+}
+
+.food-inv-col-3 {
+    float: right;
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+    text-align: right;
+    margin-bottom: 0;
+    width: 170px;
+    padding-right: 5px;
+    height: 45px;
+}
+
+#nav img {
+    width: 128px;
+    height: 128px;
+}
+
+.search {
+    width: 300px;
+    text-align: center;
+    height: 30px;
+    display: block;
+    margin: 0 auto 14px;
+}
+
+input {
+font-family: delicious;
+    background-color: #E0E4CC !important;
+    font-size: 25px;
+}
+
+
+@font-face {
+    font-family: delicious-heavy;
+    src: url(fonts/Delicious-Heavy.otf);
+}
+
+@font-face {
+    font-family: delicious;
+    src: url(fonts/Delicious-Roman.otf);
+}
+
+.welcome {
+    font-size: 80px;
+    font-family: delicious-heavy;
+    text-align: center;
+}
+
+#add-food-panel > h1 {
+    margin-left: 20px;
+    margin-top: 19px;
+    font-size: 40px;
+    font-family: delicious-heavy;
+}
+
+#add-food-panel > div:last-of-type {
+    text-align: center;
+}
+
+#add-food-button {
+    float: right;
+    margin-top: 18px;
+    margin-right: 18px;
+    background-color: #69D2E7; 
+    display: block;
+}
+
+#add-food-button:active {
+    background-color: #FA6900 !important;
+}
+
+#add-food-button img {
+    height: 30px;
+    width: 30px;
+}
+
+#save-button {
+    float: left;
+    margin-top: 18px;
+    margin-left: 18px;
+    background-color: #69D2E7; 
+    display: block;
+}
+
+#reload-button {
+    float: left;
+    margin-top: 18px;
+    margin-left: 18px;
+    background-color: #69D2E7; 
+    display: block;
+}
+
+#add-food-panel {
+    float: right;
+    background-color: #E0E4CC; 
+    height: 550px;
+    width: 200px;
+}
+
+
+#add-food-panel button {
+    width: 50px;
+    height: 35px;
+    margin-top: 10px;
+    background-color: #69D2E7 !important;
+}
+
+#add-food-panel input {
+    width: 90%;
+    margin-top: 10px;
+    padding-left: 7px;
+}
+
+#nav a img:hover {
+    background: #E0E4CC;
+}
+
+#nav a img {
+    background: #2b2b2b;
+}
+
+#nav a.active img {
+    background: #E0E4CC;
+}
+
+.inv-plus, .inv-minus {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: #69D2E7;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+
+}
+
+.food-inv-col-2 input {
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;   
+    text-align: center;
+    background-color: #E0E4CC !important;
+    box-shadow: none !important;
+    border: 0px !important;
+    float: right;
+    font-family: sans-serif;
+}
+
+button:focus {
+    box-shadow: 0 0 1em plum;
+}
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers:
+ */
+
+.hidden {
+    display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 1.25dppx),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

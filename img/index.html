@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<link href="css/normalize.css" type="text/css" rel="stylesheet"> 
+<link href="css/myKitchen.css" type="text/css" rel="stylesheet"> 
+<script src="js/angular.min.js"></script>
+<script src="js/myKitchen.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+<html ng-app="myKitchen">
+	<head>
+	<title>My Kitchen</title>
+	</head>
+	<body ng-controller="panelController as panels">
+		<div id="nav">
+			<div>
+                <img class="upper-image" src="img/food.png">
+                <img class="upper-image" src="img/recipe.png">
+                <img class="upper-image" src="img/planning.png">
+			</div>
+		</div>
+
+		<!--
+		<div class="recipe-panel" ng-show="panels.isRecipePanel()">
+		    <section class="recipe-book">
+                <img src="img/book.png">
+		    </section>
+		</div>
+		-->
+		
+		<!-- 
+        <div class="food-panel" ng-show="panels.isFoodPanel()" ng-controller="fridgeController as fridge">
+            <section class="add-food-panel pull-right" ng-show="panels.addFoodPanel">
+                <h1 id="add-food-message">Add Food<h1>
+                <div id="add-food-panel-top">
+                    <input ng-model="fridge.addFood.item" type="text" placeholder="name" class="form-control add-food-value">
+                    <input ng-model="fridge.addFood.quantity" type="text" placeholder="quantity" class="form-control add-food-value">
+                    <input ng-model="fridge.addFood.unit" type="text" placeholder="unit" class="form-control add-food-value">
+                </div>
+                <div id="add-food-panel-bottom">
+                    <p class="pull-right">{{fridge.addFood.quantity}}</p>
+                    <p>{{fridge.addFood.item}}</p>
+                    <p class="pull-right">{{fridge.addFood.unit}}</p>
+                </div>
+                <div id="add-food-panel-inject">
+                    <button ng-click="panels.toggleAddFoodPanel(); fridge.addFood(); fridge.resetAddFood(); " ng-show="fridge.addFoodReady()" class="pull-right"  type="button">
+                        <i class="icon-ok"></i>
+                    </button>
+                </div>
+            </section>
+
+            <button class="add-food-button pull-right" ng-click="panels.toggleAddFoodPanel()">
+                <img class="add-food-button-image" src="img/shopping.png">
+            </button>
+
+            <section class = "food-inventory">
+                <input class="search" ng-model="fridge.search" type="text" placeholder="search"> 
+                <div ng-repeat="food in fridge.inventory">
+                    <div ng-show="fridge.isFoodVisible(food)">  
+                        <input ng-model="food.item" type="text" class="block pull-left food-inv-col-1">
+                        <div class="pull-left food-inv-col-2">
+                            <button class="inv-plus pull-right" ng-click="fridge.increaseQuantity(food)" type="button">
+                                <i class="icon-plus"></i>
+                            </button>
+                            <input ng-model="food.quantity" value="food.quantity" class="inv-num-text pull-right" type="text">
+                            <button class="inv-minus pull-right" ng-show="food.quantity" ng-click="fridge.decreaseQuantity(food)"  type="button">
+                                <i class="icon-minus"></i>
+                            </button>
+                        </div>
+                        <input ng-model="food.unit" type="text" class="block pull-left food-inv-col-3">
+                        </br></br></br>
+                    </div>
+                </div>	
+            </section>
+        </div>
+       -->
+
+        <h1 class="welcome">My Kitchen</h1>
+	</body>
+</html>
