@@ -19,11 +19,8 @@ for($i = 0; $i < count($data); $i++) {
             // if a record of this food DOESNT exists
             $prepared = $db->prepare("INSERT INTO food (name, quantity, unit) VALUES (?,?,?)");
             $prepared->execute(array($name, $quantity, $unit));
-            echo "doesn't exist";
          }
-          echo 'no error';
      } catch (PDOException $error) {
-         echo "nooooo!.." . $error; 
      }
 }
     

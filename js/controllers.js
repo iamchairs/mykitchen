@@ -22,78 +22,53 @@ var Recipe = function (name, food, instructions, id) {
 
 var app = angular.module('app', []);
 
-app.service('globals', function() {
-	// place globals here
-});
-
-mainCtrl = app.controller('mainCtrl', function($scope, $http) {
+mainCtrl = app.controller('mainCtrl', function($scope, $http, FoodService) {
 	$scope.food = [];
-	$scope.databaseLoaded = false;
     $scope.foodPanel = false;
     $scope.foodChanged = false;
     $scope.recipePanel = false;
     $scope.planningPanel = false;
+    $scope.clearWatch = null;
 
-	var init = function() {
-        // fill $scope.food with information from database
-        $http.get('php/getFood.php').
-          then(function(response) {
-            // this callback will be called asynchronously
-            // when the response is available
-            $scope.firstWatch = true;
-            result = response.data;
-            for(i = 0; i < result.length; i++) {
-            	$scope.food.push(new Food(result[i].name, result[i].quantity, result[i].unit, result[i].id));
-            }
-          }, function(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
-        $http.get('php/getRecipes.php').then(function(response){
-        	
-        }, function(response) {
-        	
-        });
-
-		// watch for changes to $scope.food - ultimately determines if the user should consider saving
-        $scope.$watch('food', function(newval, oldval){
+    // watch for changes to $scope.food - determines if the user should consider saving or reloading
+    $scope.startWatch = function() {
+        // Angulars $scope.$watch function returns a function that, when called, degreisters the watch. $scope.clearWatch grabs this function.
+        $scope.clearWatch = $scope.$watch('food', function(newval, oldval){
             if(newval !== oldval) {
-                if(!$scope.firstWatch) {
-                    $scope.foodChanged = true;
-                }  else {
-                	$scope.firstWatch = false;
-                }
-            } else {
-            }
+               $scope.foodChanged =  true;
+            } 
         }, true);
+    }
+    
+    // loads food from database
+    $scope.loadFood = function() {
+    	return FoodService.getFood().then(function(res) {
+    		$scope.food = res;	
+    	});
+    }
+
+	// reloads food from database	
+	$scope.reload = function() {
+		$scope.clearWatch();
+		$scope.foodChanged = false;
+		$scope.loadFood().then($scope.startWatch);
+	}
+
+	// saves food to database
+	$scope.save = function() {
+        FoodService.saveFood($scope.food).then(function() {
+        	$scope.foodChanged = false;
+        })
+       
+       
+	}
+
+	// prepares application with appropriate data
+	function init () {
+        // fill $scope.food with information from database
+        $scope.loadFood().then($scope.startWatch);
 	}
 	init();
-	
-	$scope.reload = function() {
-		$scope.food = [];
-        $http.get('php/getFood.php').
-          then(function(response) {
-            $scope.firstWatch = true;
-            $scope.foodChanged = false;
-            result = response.data;
-            for(i = 0; i < result.length; i++) {
-            	$scope.food.push(new Food(result[i].name, result[i].quantity, result[i].unit, result[i].id));
-            }
-          }, function(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
-	}
-
-	$scope.save = function() {
-		json = JSON.stringify($scope.food);
-        $http.post('php/saveFood.php', json).
-          then(function(response) {
-          	$scope.foodChanged = false;
-          	console.log(response.data);
-          }, function(response) {
-        });
-	}
 });
 
 

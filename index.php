@@ -1,5 +1,5 @@
 <?php
-require_once('bootstrap.php');
+require_once('php/bootstrap.php');
 ?>
 <!DOCTYPE HTML>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
@@ -8,6 +8,7 @@ require_once('bootstrap.php');
 <script src="js/vendor/jquery-1.11.3.min.js"></script>
 <script src="js/vendor/angular.min.js"></script>
 <script src="js/controllers.js"></script>
+<script src="js/food.service.js"></script>
 <html ng-app="app">
 	<head>
             <title>My Kitchen</title>
@@ -52,8 +53,10 @@ require_once('bootstrap.php');
 		
         <div class="food-panel" ng-show="foodPanel" ng-controller="fridgeCtrl">
 
+
             <button id="save-button" ng-show="foodChanged" ng-click="save()">SAVE</button>
             <button id="reload-button" ng-show="foodChanged" ng-click="reload()">RESET</button>
+
 
             <div id="add-food-panel" ng-show="addFoodPanel">
                 <h1>Add Food</h1>
@@ -71,7 +74,9 @@ require_once('bootstrap.php');
                 <img src="img/shopping.png">
             </button>
 
+
             <div class="food-inventory">
+
 
                 <input class="search" ng-model="search" type="text" placeholder="search"> 
 
@@ -79,11 +84,11 @@ require_once('bootstrap.php');
                         <input ng-model="item.name" type="text" class="food-inv-col-1">
 
                         <div class="food-inv-col-2">
-                            <button class="inv-plus" ng-click="increaseQuantity(item)">+</button>
+                            <button class="inv-plus" ng-click="myform.$dirty = true; increaseQuantity(item)">+</button>
 
                             <input ng-model="item.quantity" value="item.quantity"type="text">
 
-                            <button class="inv-minus" ng-show="item.quantity" ng-click="decreaseQuantity(item)">-</button>
+                            <button class="inv-minus" ng-show="item.quantity" ng-click="myform.$dirty = true; decreaseQuantity(item)">-</button>
                         </div>
 
                         <input ng-model="item.unit" type="text" class="food-inv-col-3">
@@ -91,6 +96,7 @@ require_once('bootstrap.php');
                 </div>	
 
             </div>
+
         </div>
 
         <h1 class="welcome">My Kitchen</h1>
