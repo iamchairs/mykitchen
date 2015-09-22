@@ -149,42 +149,42 @@ button {
 
 #recipe-panel > div > div {
     position: relative;
-    left: 110px;
-    top: 30px;
+    width: 777px;
+    height: 450px;
+    margin: auto;
 }
 
 #recipe-panel > div > div > div:first-of-type {
-    width: 185px;
+    left: 110px;
+    top: 30px;
+    width: 240px;
+    height: 380px;
     position: absolute;
 }
 
 #recipe-panel > div > div > div:last-of-type {
     position: relative;
-    left: 315px;
-    width: 280px;
+    left: 430px;
+    top: 30px;
+    width: 272px;
     height: 400px;
     overflow-y: scroll;
 }
 
+#recipe-panel > div > div > div:last-of-type p { 
+    font-size: 1.3em;
+}
+
 #recipe-panel button {
     margin: 0 auto 17px;
-    width: 60px;
     display: block;
     background-color: #69D2E7;
 }
 
-#single-listing h1 {
-    font-family: delicious-heavy;
-    margin-top: 0;
-}
 
 #all-listings h1 { 
     font-family: delicious-heavy; 
     margin-top: 110px;
-}
-
-#single-listing ul {
-    padding-left: 20px;
 }
 
 #all-listings ul {
@@ -193,9 +193,27 @@ button {
 
 #all-listings a {
     font-family: delicious;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
     color: #FA6900;
+}
+
+#single-listing span{
+    padding-left: 10px;
+}
+
+#single-listing p {
+    margin: 2px;
+}
+
+#single-listing h1 {
+    font-family: delicious-heavy;
+    margin-top: 0;
+    text-align: center;
+}
+
+#single-listing ul {
+    padding-left: 20px;
 }
 
 #single-listing li, #all-listings li {
@@ -203,9 +221,23 @@ button {
 }
 
 #single-listing div:first-of-type li {
-    font-family: delicious;
+    font-family: Lato;
     font-size: 20px;
     text-decoration: none;
+    font-weight: bold;
+}
+
+#single-listing .error {
+    color: red;
+    font-weight: bold; 
+}
+
+#single-listing div div {
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    font-family: delicious-heavy;
 }
 
 .food-panel {
@@ -220,6 +252,44 @@ button {
     margin-right: auto;
     padding-top: 50px;
     padding-bottom: 50px;
+    position: relative;
+}
+
+.food-inventory > div:last-of-type {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+
+.food-inventory > div:last-of-type button {
+    background-color: #E0E4CC;
+    color: #69D2E7;
+    border: none;
+    font-size: 1.5em;
+}
+
+.food-inventory > div:last-of-type button:first-of-type {
+    position: absolute;
+    left: 0;
+}
+
+.food-inventory > div:last-of-type button:last-of-type {
+    position: absolute;
+    right: 8;
+}
+
+.food-inventory > div:last-of-type > div {
+    display: inline-block;
+    width: 110px;
+    text-align: center;
+    position: relative;
+}
+
+.food-inventory > div:last-of-type span  {
+    padding-right: 8px;
+    font-size: 1.2em;
+    margin-top: 6px;
+    display: inline-block;
 }
 
 
@@ -272,15 +342,29 @@ font-family: delicious;
     font-size: 25px;
 }
 
+i.fa-check {
+    color: #02ca02;
+    float: right;
+    font-size: 28px;
+}
+
+i.fa-times {
+    color: red;
+    float: right;
+    font-size: 28px;
+    margin-right: 4px;
+}
+
+
 
 @font-face {
     font-family: delicious-heavy;
-    src: url(fonts/Delicious-Heavy.otf);
+    src: url(../fonts/Delicious-Heavy.otf);
 }
 
 @font-face {
     font-family: delicious;
-    src: url(fonts/Delicious-Roman.otf);
+    src: url(../fonts/Delicious-Roman.otf);
 }
 
 .welcome {
@@ -393,9 +477,6 @@ font-family: delicious;
     font-family: sans-serif;
 }
 
-button:focus {
-    box-shadow: 0 0 1em plum;
-}
 
 
 
