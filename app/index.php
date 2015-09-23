@@ -1,32 +1,29 @@
 <?php
-require_once('php/bootstrap.php');
+require_once('../php/bootstrap.php');
 ?>
 
 <!DOCTYPE HTML>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
-<link href="css/normalize.css" type="text/css" rel="stylesheet"> 
-<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet"> 
 <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-<link href="css/index.css" type="text/css" rel="stylesheet"> 
-<script src="js/vendor/jquery-1.11.3.min.js"></script>
-<script src="js/vendor/angular.min.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/food.service.js"></script>
-<script src="js/recipe.service.js"></script>
-<html ng-app="app">
+
+<link href="assets/css/normalize.css" type="text/css" rel="stylesheet"> 
+<link href="assets/css/font-awesome.min.css" type="text/css" rel="stylesheet"> 
+<link href="assets/css/index.css" type="text/css" rel="stylesheet"> 
+
+<html ng-app="mykitchen">
 	<head>
             <title>My Kitchen</title>
 	</head>
-	<body ng-controller="mainCtrl">
+	<body ng-controller="FoodController">
 		<div id="nav">
-			<div ng-controller="panelCtrl">
-                <a href="" ng-class="{active : foodPanel}" ng-click="toggleFoodPanel()"><img src="img/food.png"></a>
-                <a href="" ng-class="{active : recipePanel}" ng-click="toggleRecipePanel()"><img src="img/recipe.png"></a>
-                <a href="" ng-class="{active : planningPanel}" ng-click="togglePlanningPanel()"><img src="img/planning.png"></a>
+			<div ng-controller="PanelController">
+                <a href="" ng-class="{active : foodPanel}" ng-click="toggleFoodPanel()"><img src="asstes/img/food.png"></a>
+                <a href="" ng-class="{active : recipePanel}" ng-click="toggleRecipePanel()"><img src="assets/img/recipe.png"></a>
+                <a href="" ng-class="{active : planningPanel}" ng-click="togglePlanningPanel()"><img src="assets/img/planning.png"></a>
 			</div>
 		</div>
 		<div id="nav-border"></div>
-		<div id="recipe-panel" ng-show="recipePanel" ng-controller="recipeCtrl">
+		<div id="recipe-panel" ng-show="recipePanel" ng-controller="RecipeController">
 
             <input class="search" ng-show="allListings" ng-model="search" type="text" placeholder="search"> 
 			<button ng-show="singleListing" ng-click="showAllRecipes()">BACK</button>
@@ -66,7 +63,7 @@ require_once('php/bootstrap.php');
 			</div>
 		</div>
 		
-        <div class="food-panel" ng-show="foodPanel" ng-controller="fridgeCtrl">
+        <div class="food-panel" ng-show="foodPanel" ng-controller="FridgeController">
 
 
             <button id="save-button" ng-show="foodChanged" ng-click="save()">SAVE</button>
@@ -86,7 +83,7 @@ require_once('php/bootstrap.php');
             </div>
 			
             <button id="add-food-button" ng-click="toggleAddFoodPanel()">
-                <img src="img/shopping.png">
+                <img src="assets/img/shopping.png">
             </button>
 
 
@@ -125,5 +122,34 @@ require_once('php/bootstrap.php');
         </div>
 
         <h1 class="welcome">My Kitchen</h1>
+
+        <!-- Includes -->
+
+        <!-- bower:start -->
+        <script src="bower_components/jquery-1.11.3.min.js"></script>
+        <script src="bower_components/angular.min.js"></script>
+        <!-- endbower -->
+
+        <!-- classes:start -->
+        <script src="components/food/food.class.js"></script>
+        <script src="components/recipe/recipe.class.js"></script>
+        <!-- endclasses -->
+
+        <!-- modules:start -->
+        <script src="components/food/food.module.js"></script>
+        <script src="components/fridge/fridge.module.js"></script>
+        <script src="components/mykitchen/mykitchen.module.js"></script>
+        <script src="components/recipe/recipe.module.js"></script>
+        <!-- modulesend -->
+
+        <!-- components:start -->
+        <script src="components/food/food.controller.js"></script>
+        <script src="components/food/food.service.js"></script>
+        <script src="components/fridge/fridge.controller.js"></script>
+        <script src="components/mykitchen/mykitchen.controller.js"></script>
+        <script src="components/recipe/recipe.controller.js"></script>
+        <script src="components/recipe/recipe.service.js"></script>
+        <!-- componentsend -->
+
 	</body>
 </html>

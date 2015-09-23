@@ -142,7 +142,7 @@ button {
 #recipe-panel > div {
     width: 777px;
     height: 450px;
-    background-image: url('../img/book2.jpg');
+    background-image: url('../assets/img/book2.jpg');
     margin-left: auto;
     margin-right: auto;
 }
@@ -359,12 +359,12 @@ i.fa-times {
 
 @font-face {
     font-family: delicious-heavy;
-    src: url(../fonts/Delicious-Heavy.otf);
+    src: url(../assets/fonts/Delicious-Heavy.otf);
 }
 
 @font-face {
     font-family: delicious;
-    src: url(../fonts/Delicious-Roman.otf);
+    src: url(../assets/fonts/Delicious-Roman.otf);
 }
 
 .welcome {
